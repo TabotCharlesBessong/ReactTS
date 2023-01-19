@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Wrapper,StyledButton} from './App.styles'
+import {Drawer,Grid,LinearProgress,Badge} from '@material-ui/core'
+import {AddShoppingCart} from '@material-ui/icons'
+import {useState} from 'react'
 
 function App() {
+  const [cartOpen, setCartOpen] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)} >
+        <h1>Hello Typescript</h1>
+      </Drawer>
+      <StyledButton onClick={() => setCartOpen(true)} >
+       <Badge badgeContent={12}>
+        <AddShoppingCart/>
+       </Badge>
+      </StyledButton>
+    </Wrapper>
   );
 }
 
