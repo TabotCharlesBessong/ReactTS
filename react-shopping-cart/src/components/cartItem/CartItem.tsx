@@ -2,35 +2,44 @@
 import React from 'react'
 import {Wrapper} from './CartItem.styles'
 import { Button } from '@material-ui/core'
+import {CartItemType} from '../../App'
 
-const CartItem = () => {
+type Props = {
+  item:CartItemType;
+  addToCart:(clickedItem:CartItemType) => void;
+  removeFromCart:(id:number) => void
+}
+
+const CartItem: React.FC<Props> = ({item,addToCart,removeFromCart}) => {
   return (
     <Wrapper>
       <div>
-        <h3>Title</h3>
+        <h3>{item.title}</h3>
         <div className="information">
-          <p>Price</p>
-          <p>Total</p>
+          <p>Price: $${item.price}</p>
+          <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
         </div>
         <div className="buttons">
           <Button
           size='small'
           disableElevation
           variant='contained'
+          onClick={() => removeFromCart(item.id)}
           >
-           red 
+           - 
           </Button>
-          <p>4</p>
+          <p>{item.amount}</p>
           <Button
           size='small'
           disableElevation
           variant='contained'
+          onClick={() => addToCart(item)}
           >
-           inc 
+           +
           </Button>
         </div>
       </div>
-      <img src="../../assets/family (10).jpg" alt="" />
+      <img src={item.image} alt={item.title} />
     </Wrapper>
   )
 }
