@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Navbar } from '../components'
+import { Navbar, Sidebar } from '../components'
 
 type Props = {}
 
@@ -11,7 +11,7 @@ const Home = (props: Props) => {
         <Navbar/>
       </div>
       <div style={{height:'92vh'}} className="flex">
-        Sidebar
+        <Sidebar/>
       </div>
     </div>
   )
