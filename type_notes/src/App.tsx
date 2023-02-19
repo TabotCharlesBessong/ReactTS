@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components";
+import { Home } from "./pages";
 import { SelectedPage } from "./shared/types";
 
 function App() {
@@ -22,16 +23,15 @@ function App() {
 	}, []);
 
 	return (
-		<Router>
+		<div className="app bg-gray-20">
 			<Navbar
 				isTopOfPage={isTopOfPage}
 				selectedPage={selectedPage}
 				setSelectedPage={setSelectedPage}
 			/>
-			<Routes>
-				<Route path="/" element="" />
-			</Routes>
-		</Router>
+			<Home setSelectedPage={setSelectedPage} />
+
+		</div>
 	);
 }
 
