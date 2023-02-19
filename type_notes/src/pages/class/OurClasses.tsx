@@ -1,47 +1,14 @@
-import images from "../../constants/images";
-import { ClassType, SelectedPage } from "../../shared/types";
+import {ClassType, SelectedPage } from "../../shared/types";
 import {Class} from '../../pages'
 import HText from "../../shared/HText";
 import { motion } from "framer-motion";
+import data from "../../constants/data";
 
 type Props = {
   setSelectedPage: (value:SelectedPage) => void
 }
 
-const classes: Array<ClassType> = [
-	{
-		name: "Weight Training Classes",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		image: images.image1,
-	},
-	{
-		name: "Yoga Classes",
-		image: images.image2,
-	},
-	{
-		name: "Ab Core Classes",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		image: images.image3,
-	},
-	{
-		name: "Adventure Classes",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		image: images.image4,
-	},
-	{
-		name: "Fitness Classes",
-		image: images.image5,
-	},
-	{
-		name: "Training Classes",
-		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-		image: images.image6,
-	},
-];
+
 
 const OurClasses = ({setSelectedPage}: Props) => {
   return (
@@ -72,7 +39,7 @@ const OurClasses = ({setSelectedPage}: Props) => {
 				</motion.div>
 				<div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
 					<ul className="w-[2800px] whitespace-nowrap">
-						{classes.map((item: ClassType, index) => (
+						{data.classes.map((item: ClassType, index) => (
 							<Class
 								key={`${item.name}-${index}`}
 								name={item.name}
