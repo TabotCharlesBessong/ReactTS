@@ -25,15 +25,15 @@ const Navbar = (props: Props) => {
         </Link>
       </div>
 
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex items-center justify-center md:gap-5 gap-2">
         <form >
           <div className="flex bg-zinc-900 items-center h-10 px-4 pr-0">
             <div className="flex gap-4 items-center pr-5">
               <div >
                 <AiOutlineSearch className="cursor-pointer text-xl" />
               </div>
-              <input type="text" className="w-96 bg-zinc-900 focus:outline-none border-none" />
-              <AiOutlineClose className=" text-xl cursor-pointer" />
+              <input type="text" className="md:w-96 w-0 bg-zinc-900 focus:outline-none border-none" />
+              <AiOutlineClose className=" md:text-xl w-0 cursor-pointer" />
             </div>
             <button className="h-10 w-16 flex items-center justify-center bg-zinc-800">
               <AiOutlineSearch className="cursor-pointer text-xl" />
