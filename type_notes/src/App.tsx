@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components";
-import { Home } from "./pages";
+import { Benefits, Home } from "./pages";
 import { SelectedPage } from "./shared/types";
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
 				setSelectedPage={setSelectedPage}
 			/>
 			<Home setSelectedPage={setSelectedPage} />
+			<Benefits setSelectedPage={setSelectedPage} />
 
 		</div>
 	);
