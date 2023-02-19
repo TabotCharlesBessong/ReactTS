@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import ContactUs from "./components/ContactUs";
 import { Benefits, Home, OurClasses } from "./pages";
 import { SelectedPage } from "./shared/types";
@@ -34,6 +34,7 @@ function App() {
 			<Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />
+			<Footer/>
 		</div>
 	);
 }
