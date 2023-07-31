@@ -10,7 +10,7 @@ interface TodoContextProps {
 export interface Todo {
   id: string;
   text: string;
-  completed: "undone" | "completed";
+  status: "undone" | "completed";
 }
 
 export const TodoContext = createContext<TodoContextProps | undefined>(
@@ -25,7 +25,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
     const newTodo: Todo = {
       id: nanoid(),
       text,
-      completed: "undone",
+      status: "undone",
     };
     setTodos([...todos, newTodo]);
   };
