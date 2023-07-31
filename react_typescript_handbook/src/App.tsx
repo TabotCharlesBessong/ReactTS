@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div>
+    <div className="flex items-start justify-center flex-col mx-auto" >
       <Toaster position="top-right" />
       <AddTodo />
       <TodoList />

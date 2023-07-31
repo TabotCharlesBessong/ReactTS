@@ -5,7 +5,7 @@ import { Input } from "./Input";
 
 const AddTodo = () => {
   const [input, setInput] = useState<string>("");
-  const [todos, setTodos] = useState<string[]>([])
+  // const [todos, setTodos] = useState<string[]>([])
   const {addTodo} = useTodo()
 
   const inputRef = useRef<HTMLInputElement>(null);
